@@ -4,7 +4,7 @@
   Contacts: http://cyberspace.industries/
   License: LICENSE.ENG.txt
 -->
-<addon addon_id="csiXF_recentPostsLink" title="(CSI/XF/MODULE) Последние сообщения (ссылка)" version_string="1.0.0" version_id="1" url="http://cyberspace.industries/" install_callback_class="" install_callback_method="" uninstall_callback_class="" uninstall_callback_method="">
+<addon addon_id="csiXF_recentPostsLink" title="(CSI/XF/MODULE) Последние сообщения (ссылка)" version_string="1.0.1" version_id="2" url="http://cyberspace.industries/" install_callback_class="" install_callback_method="" uninstall_callback_class="" uninstall_callback_method="">
   <admin_navigation/>
   <admin_permissions/>
   <admin_style_properties/>
@@ -32,7 +32,7 @@
   <phrases>
     <phrase title="option_csiXF_recentPostsLink_lastXdays" version_id="1" version_string="1.0.0"><![CDATA[Количество дней]]></phrase>
     <phrase title="option_csiXF_recentPostsLink_lastXdays_explain" version_id="1" version_string="1.0.0"><![CDATA[Укажите количество дней, за которые будет отображены последние сообщения. Введите 0 для снятия ограничения.]]></phrase>
-    <phrase title="option_group_csiXF_recentPostsLink" version_id="1" version_string="1.0.0"><![CDATA[(CSI/XF) Последние сообщения (ссылка)]]></phrase>
+    <phrase title="option_group_csiXF_recentPostsLink" version_id="2" version_string="1.0.1"><![CDATA[(CSI/XF/MODULE) Последние сообщения (ссылка)]]></phrase>
     <phrase title="option_group_csiXF_recentPostsLink_description" version_id="1" version_string="1.0.0"><![CDATA[Ссылка в навигационной панели, при помощи которой можно посмотреть последние сообщения.]]></phrase>
   </phrases>
   <route_prefixes/>
