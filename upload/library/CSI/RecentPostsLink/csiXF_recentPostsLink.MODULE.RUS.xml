@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright © 2015 CYBERSPACE Industries. All rights reserved.
+  Contacts: http://cyberspace.industries/
+  License: LICENSE.RUS.txt
+-->
+<addon addon_id="csiXF_recentPostsLink" title="(CSI/XF/MODULE) Последние сообщения (ссылка)" version_string="1.0.0" version_id="1" url="http://cyberspace.industries/" install_callback_class="" install_callback_method="" uninstall_callback_class="" uninstall_callback_method="">
+  <admin_navigation/>
+  <admin_permissions/>
+  <admin_style_properties/>
+  <admin_templates/>
+  <admin_template_modifications/>
+  <code_events/>
+  <code_event_listeners/>
+  <cron/>
+  <email_templates/>
+  <email_template_modifications/>
+  <optiongroups>
+    <group group_id="csiXF_recentPostsLink" display_order="99999999" debug_only="0"/>
+    <option option_id="csiXF_recentPostsLink_lastXdays" edit_format="textbox" data_type="string" can_backup="1">
+      <default_value><![CDATA[0]]></default_value>
+      <edit_format_params></edit_format_params>
+      <sub_options></sub_options>
+      <relation group_id="csiXF_recentPostsLink" display_order="1"/>
+    </option>
+  </optiongroups>
+  <permissions>
+    <permission_groups/>
+    <permissions/>
+    <interface_groups/>
+  </permissions>
+  <phrases>
+    <phrase title="option_csiXF_recentPostsLink_lastXdays" version_id="1" version_string="1.0.0"><![CDATA[Количество дней]]></phrase>
+    <phrase title="option_csiXF_recentPostsLink_lastXdays_explain" version_id="1" version_string="1.0.0"><![CDATA[Укажите количество дней, за которые будет отображены последние сообщения. Введите 0 для снятия ограничения.]]></phrase>
+    <phrase title="option_group_csiXF_recentPostsLink" version_id="1" version_string="1.0.0"><![CDATA[(CSI/XF) Последние сообщения (ссылка)]]></phrase>
+    <phrase title="option_group_csiXF_recentPostsLink_description" version_id="1" version_string="1.0.0"><![CDATA[Ссылка в навигационной панели, при помощи которой можно посмотреть последние сообщения.]]></phrase>
+  </phrases>
+  <route_prefixes/>
+  <style_properties/>
+  <templates>
+    <template title="csiXF_recentPostsLink" version_id="1" version_string="1.0.0"><![CDATA[<xen:if is="{$visitor.user_id}">
+  <xen:if is="{$xenOptions.csiXF_recentPostsLink_lastXdays}">
+    <li><a href="{xen:link 'find-new/posts', '', 'days={$xenOptions.csiXF_recentPostsLink_lastXdays}'}" rel="nofollow">{xen:phrase recent_posts}</a></li>
+  <xen:else />
+    <li><a href="{xen:link 'find-new/posts', '', 'recent=1'}" rel="nofollow">{xen:phrase recent_posts}</a></li>
+  </xen:if>
+</xen:if>]]></template>
+  </templates>
+  <public_template_modifications>
+    <modification template="navigation" modification_key="csiXF_recentPostsLink" description="Добавление ссылки &quot;Последние сообщения&quot; в навигационную панель" execution_order="10" enabled="1" action="str_replace">
+      <find><![CDATA[<li><a href="{xen:link 'find-new/posts'}" rel="nofollow">{xen:if $visitor.user_id, {xen:phrase new_posts}, {xen:phrase recent_posts}}</a></li>]]></find>
+      <replace><![CDATA[<xen:include template="csiXF_recentPostsLink" />
+$0]]></replace>
+    </modification>
+  </public_template_modifications>
+  <bb_code_media_sites/>
+  <bb_codes/>
+</addon>
